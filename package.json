@@ -1,5 +1,29 @@
 {
   "name": "new-comp",
+  "description": "CLI for creating new react components",
+  "keywords": [
+    "react",
+    "reactjs",
+    "cli",
+    "component",
+    "boilerplate"
+  ],
+  "author": {
+    "name": "Alexis Guzman"
+  },
+  "homepage": "https://github.com/codingcodax/new-comp#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codingcodax/new-comp"
+  },
+  "bugs": {
+    "url": "https://github.com/codingcodax/new-comp/issues"
+  },
+  "license": "MIT",
+  "bin": {
+    "new-comp": "./dist/index.js"
+  },
+  "main": "src/index.ts",
   "module": "src/index.ts",
   "type": "module",
   "scripts": {
