@@ -1,6 +1,7 @@
 {
   "name": "new-comp",
   "description": "CLI for creating new react components",
+  "version": "0.0.1",
   "keywords": [
     "react",
     "reactjs",
@@ -23,6 +24,9 @@
   "bin": {
     "new-comp": "./dist/index.js"
   },
+  "files": [
+    "dist"
+  ],
   "main": "src/index.ts",
   "module": "src/index.ts",
   "scripts": {
@@ -42,7 +46,7 @@
     "typescript": "^4.9.5"
   },
   "dependencies": {
-    "chalk": "^5.2.0",
+    "chalk": "^4.1.2",
     "commander": "^10.0.0"
   }
 }
