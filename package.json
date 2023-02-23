@@ -22,10 +22,10 @@
   },
   "license": "MIT",
   "bin": {
-    "new-comp": "./dist/index.js"
+    "new-comp": "./lib/src/index.js"
   },
   "files": [
-    "dist"
+    "lib"
   ],
   "main": "src/index.ts",
   "module": "src/index.ts",
