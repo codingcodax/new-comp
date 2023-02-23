@@ -67,8 +67,8 @@ const init = () => {
   const indexExtension = options.lang === 'js' ? 'js' : 'ts';
 
   // Find the path to the selected template files.
-  const fileTemplatePath = `./src/templates/${options.type}-${options.ui}.txt`;
-  const indexTemplatePath = './src/templates/index.txt';
+  const fileTemplatePath = `templates/${options.type}-${options.ui}.txt`;
+  const indexTemplatePath = 'templates/index.txt';
 
   const fileTemplateContent = readFileSync(
     path.join(__dirname, fileTemplatePath),
