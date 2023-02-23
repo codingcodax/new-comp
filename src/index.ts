@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { mkdirSync, writeFileSync, readFileSync } from 'fs';
 import { Command, Option } from 'commander';
 
