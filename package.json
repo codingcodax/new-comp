@@ -33,7 +33,8 @@
     "start": "ts-node src/index.ts",
     "lint": "eslint src/**",
     "lint:fix": "eslint src/** --fix",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "build": "tsc"
   },
   "devDependencies": {
     "@types/prettier": "^2.7.2",
