@@ -22,7 +22,7 @@
   },
   "license": "MIT",
   "bin": {
-    "new-comp": "./lib/src/index.js"
+    "n-comp": "./lib/src/index.js"
   },
   "files": [
     "lib"
