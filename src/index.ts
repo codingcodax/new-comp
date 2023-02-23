@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import { mkdirSync, writeFileSync, readFileSync } from 'fs';
+import path from 'path';
 import { Command, Option } from 'commander';
 
 import { version } from '../package.json';
@@ -69,14 +70,14 @@ const init = () => {
   const fileTemplatePath = `./src/templates/${options.type}-${options.ui}.txt`;
   const indexTemplatePath = './src/templates/index.txt';
 
-  const fileTemplateContent = readFileSync(fileTemplatePath, 'utf-8').replace(
-    /COMPONENT_NAME/g,
-    componentName
-  );
-  const indexTemplateContent = readFileSync(indexTemplatePath, 'utf-8').replace(
-    'COMPONENT_NAME',
-    componentName
-  );
+  const fileTemplateContent = readFileSync(
+    path.join(__dirname, fileTemplatePath),
+    'utf-8'
+  ).replace(/COMPONENT_NAME/g, componentName);
+  const indexTemplateContent = readFileSync(
+    path.join(__dirname, indexTemplatePath),
+    'utf-8'
+  ).replace('COMPONENT_NAME', componentName);
 
   // Get all of our file paths worked out, for the user's project.
   const componentDir = `${options.dir}/${componentName}`;
