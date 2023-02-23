@@ -1,7 +1,7 @@
 {
   "name": "n-comp",
   "description": "CLI for creating new react components",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "keywords": [
     "react",
     "reactjs",
