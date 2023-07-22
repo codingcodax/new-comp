@@ -26,7 +26,6 @@ const logIntro = ({ name, lang, type, ui, dir }: { [key: string]: string }) => {
   const uiString = chalk.bold.hex(uiColor(ui))(ui);
   const dirString = chalk.bold.hex('#6e56cf')(dir);
 
-  console.info('\n');
   console.info(`✨ Creating the ${nameString} component ✨`);
   console.info('\n');
 
@@ -34,7 +33,6 @@ const logIntro = ({ name, lang, type, ui, dir }: { [key: string]: string }) => {
   console.info(`Type: ${typeString}`);
   console.info(`UI Library: ${uiString}`);
   console.info(`Directory: ${dirString}`);
-  console.info('\n');
 };
 
 export default logIntro;
