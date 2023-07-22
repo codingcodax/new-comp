@@ -25,6 +25,7 @@
 - Even you can use your favorite ui library (personal whim).
 
 ## Quickstart
+
 From your terminal run:
 
 ```bash
@@ -36,11 +37,13 @@ $ yarn n-comp
 ```
 
 `cd` into your project's directory, and try creating a new component:]
+
 ```bash
 $ new-component MyNewComponent
 ```
 
 Your project will now have a new directory at `src/components/MyNewComponent`. This directory has two files:
+
 ```javascript
 // `MyNewComponent/index.js`
 export { default } from './MyNewComponent';
@@ -58,9 +61,11 @@ function MyNewComponent() {
 
 export default MyNewComponent;
 ```
+
 These files will be formatted according to your Prettier configuration.
 
 ## Configuration
+
 Configuration can be done through 3 different ways:
 
 - Creating a global `.nc.config.json` in your home directory (`~/.nc.config.json`).
@@ -72,6 +77,7 @@ The resulting values are merged, with command-line values overwriting local valu
 ## API Reference
 
 ### Language
+
 Controls which language, JavaScript or TypeScript, should be used.
 
 - `ts` — creates a `.tsx` file (default).
@@ -83,6 +89,7 @@ Command line: `--lang <value>` or `-l <value>`
 JSON config: `{ "lang": <value> }`
 
 ### Type
+
 Controls which type of component, function, arrow or class should be used.
 
 - Function — use `function MyNewComponent() {}`
@@ -95,6 +102,7 @@ Command line: `--type <value>` or `-t <value>`
 JSON config: `{ "type": <value> }`
 
 ### UI Library
+
 Controls which ui library, vanilla, Chakra UI or MUI should be used.
 
 - Vanilla — use `<div>` and `<p>` tags.
@@ -107,6 +115,7 @@ Command line: `--ui <value>`
 JSON config: `{ "ui": <value> }`
 
 ### Directory
+
 Controls the desired directory for the created component. Defaults to `src/components`
 
 **Usage:**
