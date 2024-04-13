@@ -1,12 +1,36 @@
 {
   "name": "new-comp",
+  "description": "CLI for creating new react components",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "keywords": [
+    "react",
+    "reactjs",
+    "cli",
+    "component",
+    "boilerplate"
+  ],
+  "author": {
+    "name": "Alexis Guzman",
+    "url": "https://github.com/codingcodax"
+  },
+  "homepage": "https://github.com/codingcodax/new-comp#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codingcodax/new-comp"
+  },
+  "bugs": {
+    "url": "https://github.com/codingcodax/new-comp/issues"
+  },
+  "license": "ISC",
+  "bin": {
+    "new-comp": "./lib/src/index.js"
+  },
+  "files": [
+    "lib"
+  ],
+  "main": "src/index.ts",
+  "module": "src/index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  }
 }
