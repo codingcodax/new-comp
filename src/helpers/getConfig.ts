@@ -1,4 +1,5 @@
 import { homedir } from 'os';
+
 import { requireOptional } from '~/utils/requireOptional';
 
 type Config = {
@@ -20,7 +21,9 @@ export const getConfig = () => {
   };
 
   const globalOverrides: Config = requireOptional(`/${home}/nw.config.json`);
-  const localOverrides: Config = requireOptional(`/${currentPath}/nw.config.json`);
+  const localOverrides: Config = requireOptional(
+    `/${currentPath}/nw.config.json`
+  );
 
   return Object.assign({}, defaults, globalOverrides, localOverrides);
 };

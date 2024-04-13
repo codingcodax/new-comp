@@ -1,4 +1,3 @@
-
 export const requireOptional = (filePath: string) => {
   try {
     return require(filePath);
