@@ -23,7 +23,7 @@
   },
   "license": "MIT",
   "bin": {
-    "n-comp": "./lib/src/index.js"
+    "n-comp": "./lib/index.js"
   },
   "files": [
     "lib"
@@ -31,9 +31,10 @@
   "main": "src/index.ts",
   "module": "src/index.ts",
   "scripts": {
-    "dev": "ts-node src/index.ts",
+    "dev": "tsup --watch",
+    "start": "node lib/index.js",
     "prebuild": "rm -rf lib",
-    "build": "tsc",
+    "build": "tsup",
     "lint": "eslint src/**",
     "lint:fix": "eslint src/** --fix",
     "typecheck": "tsc --noEmit",
