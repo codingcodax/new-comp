@@ -21,7 +21,7 @@
   "bugs": {
     "url": "https://github.com/codingcodax/new-comp/issues"
   },
-  "license": "ISC",
+  "license": "MIT",
   "bin": {
     "n-comp": "./lib/src/index.js"
   },
