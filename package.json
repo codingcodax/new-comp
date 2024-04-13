@@ -32,6 +32,7 @@
   "module": "src/index.ts",
   "scripts": {
     "dev": "ts-node src/index.ts",
+    "build": "tsc",
     "lint": "eslint src/**",
     "lint:fix": "eslint src/** --fix",
     "typecheck": "tsc --noEmit",
