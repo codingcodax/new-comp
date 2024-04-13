@@ -1,3 +1,4 @@
+import * as React from 'react';
 import { Box, Typography } from '@mui/material';
 
 class COMPONENT_NAME extends React.Component {

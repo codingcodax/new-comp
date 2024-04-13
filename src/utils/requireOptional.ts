@@ -1,10 +1,8 @@
-const requireOptional = (filePath: string) => {
+export const requireOptional = (filePath: string) => {
   try {
     return require(filePath);
   } catch (e) {
-    // @ts-ignore
+    // @ts-expect-error e.code is of type 'unknown'.
     if (e.code !== 'MODULE_NOT_FOUND') throw e;
   }
 };
-
-export default requireOptional;

@@ -1,7 +1,7 @@
-import prettier from 'prettier';
+import prettier from '@prettier/sync';
 
-const buildPrettifier = () => {
-  let config = prettier.resolveConfig.sync(process.cwd()) || {
+export const buildPrettifier = () => {
+  const config = prettier.resolveConfig(process.cwd()) || {
     singleQuote: true,
     tabWidth: 2,
     trailingComma: 'es5',
@@ -11,5 +11,3 @@ const buildPrettifier = () => {
 
   return (text: string) => prettier.format(text, config);
 };
-
-export default buildPrettifier;

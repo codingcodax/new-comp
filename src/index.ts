@@ -1,39 +1,30 @@
 #!/usr/bin/env node
-import { mkdirSync, writeFileSync, readFileSync } from 'fs';
+import { mkdirSync, readFileSync, writeFileSync } from 'fs';
 import path from 'path';
 import { Command, Option } from 'commander';
 
-import { version } from '../package.json';
-import {
-  buildPrettifier,
-  checkIfComponentExists,
-  getConfig,
-  logConclusion,
-  logIntro,
-} from './helpers';
+import { getConfig } from '~/helpers/getConfig';
 
-const program = new Command();
+import packageJson from '../package.json';
+import { buildPrettifier } from './helpers/buildPrettifier';
+import { checkIfComponentExists } from './helpers/checkIfComponentExists';
+import { logConclusion } from './helpers/logConclusion';
+import { logIntro } from './helpers/logIntro';
+
 const config = getConfig();
+const program = new Command();
 const prettify = buildPrettifier();
 
-const init = () => {
+const initCommand = (): void => {
   program
-    .name('new-component')
-    .summary('Create react components.')
-    .description('CLI utility for create react components the way you love.')
-    .version(version, '-v, --version', 'Output the version number.')
-    .argument('<componentName>', 'Name of the component you want create')
+    .name(packageJson.name)
+    .summary('Create react components')
+    .description(packageJson.description)
+    .version(packageJson.version, '-v, --version', 'Display version number')
     .helpOption('-h, --help', 'Display help for command')
-    // .addOption(
-    //   new Option('-i, --interactive', 'Use CLI to configure.').conflicts([
-    //     'lang',
-    //     'type',
-    //     'component',
-    //     'dir',
-    //   ])
-    // )
+    .argument('<componentName>', 'Name of the component you want to create')
     .addOption(
-      new Option('-l, --lang <language>', 'Which language to use')
+      new Option('-l, --lang <language>', 'Which laguange to use')
         .default(config.lang)
         .choices(['ts', 'js'])
     )
@@ -55,27 +46,32 @@ const init = () => {
         '-d, --dir <pathToDirectory>',
         'Path to the "components" directory'
       ).default(config.dir)
-    )
-    .parse(process.argv);
+    );
+
+  program.parse();
 
   const [componentName] = program.args;
-
   const options = program.opts();
 
-  // Files extension.
   const fileExtension = options.lang === 'js' ? 'js' : 'tsx';
   const indexExtension = options.lang === 'js' ? 'js' : 'ts';
+  const fileTemplatePath = `${options.type}/${options.ui}.tsx`;
+  const indexTemplatePath = 'index.txt';
 
-  // Find the path to the selected template files.
-  const fileTemplatePath = `templates/${options.type}-${options.ui}.txt`;
-  const indexTemplatePath = 'templates/index.txt';
-
+  const fileTemplateFinalPath = path.join(
+    __dirname.replace('lib', 'templates'),
+    fileTemplatePath
+  );
+  const indexTemplateFinalPath = path.join(
+    __dirname.replace('lib', 'templates'),
+    indexTemplatePath
+  );
   const fileTemplateContent = readFileSync(
-    path.join(__dirname, fileTemplatePath),
+    fileTemplateFinalPath,
     'utf-8'
-  ).replace(/COMPONENT_NAME/g, componentName);
+  ).replaceAll('COMPONENT_NAME', componentName);
   const indexTemplateContent = readFileSync(
-    path.join(__dirname, indexTemplatePath),
+    indexTemplateFinalPath,
     'utf-8'
   ).replace('COMPONENT_NAME', componentName);
 
@@ -105,4 +101,4 @@ const init = () => {
   logConclusion();
 };
 
-init();
+initCommand();

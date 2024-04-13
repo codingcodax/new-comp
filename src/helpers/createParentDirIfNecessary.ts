@@ -1,10 +1,8 @@
-import path from 'path';
 import { existsSync, mkdirSync } from 'fs';
+import path from 'path';
 
-const createParentDirIfNecessary = (dir: string) => {
+export const createParentDirIfNecessary = (dir: string) => {
   const fullPathToParentDir = path.resolve(dir);
 
   if (!existsSync(fullPathToParentDir)) mkdirSync(dir);
 };
-
-export default createParentDirIfNecessary;

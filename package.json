@@ -1,7 +1,7 @@
 {
   "name": "n-comp",
   "description": "CLI for creating new react components",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "keywords": [
     "react",
     "reactjs",
@@ -10,7 +10,8 @@
     "boilerplate"
   ],
   "author": {
-    "name": "Alexis Guzman"
+    "name": "Alexis Guzman",
+    "url": "https://github.com/codingcodax"
   },
   "homepage": "https://github.com/codingcodax/new-comp#readme",
   "repository": {
@@ -22,34 +23,43 @@
   },
   "license": "MIT",
   "bin": {
-    "n-comp": "./lib/src/index.js"
+    "n-comp": "./lib/index.js"
   },
   "files": [
-    "lib"
+    "lib",
+    "templates"
   ],
   "main": "src/index.ts",
   "module": "src/index.ts",
   "scripts": {
-    "start": "ts-node src/index.ts",
+    "dev": "tsup --watch",
+    "start": "node lib/index.js",
+    "prebuild": "rm -rf lib",
+    "build": "tsup",
     "lint": "eslint src/**",
     "lint:fix": "eslint src/** --fix",
-    "format": "prettier --write .",
-    "prebuild": "rm -rf lib/",
-    "build": "tsc && cp -r src/templates/ lib/src/"
+    "typecheck": "tsc --noEmit",
+    "format": "prettier src/** --check",
+    "format:fix": "prettier src/** --write"
   },
   "devDependencies": {
-    "@types/prettier": "^2.7.3",
-    "@typescript-eslint/eslint-plugin": "^6.1.0",
-    "@typescript-eslint/parser": "^6.1.0",
-    "eslint": "^8.45.0",
-    "eslint-config-prettier": "^8.8.0",
-    "eslint-plugin-prettier": "^5.0.0",
-    "ts-node": "^10.9.1",
-    "typescript": "^5.1.6"
+    "@chakra-ui/react": "^2.8.2",
+    "@ianvs/prettier-plugin-sort-imports": "^4.2.1",
+    "@mui/material": "^5.15.15",
+    "@types/node": "^20.12.7",
+    "@types/react": "^18.2.78",
+    "@typescript-eslint/eslint-plugin": "^7.6.0",
+    "@typescript-eslint/parser": "^7.6.0",
+    "eslint": "^8.56.0",
+    "react": "^18.2.0",
+    "ts-node": "^10.9.2",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.5"
   },
   "dependencies": {
-    "chalk": "^5.3.0",
-    "commander": "^11.0.0",
-    "prettier": "^2.8.4"
+    "@prettier/sync": "^0.5.1",
+    "chalk": "^4.1.2",
+    "commander": "^12.0.0",
+    "prettier": "^3.2.5"
   }
 }

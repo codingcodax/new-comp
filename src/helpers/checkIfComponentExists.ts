@@ -1,8 +1,9 @@
-import path from 'path';
 import { existsSync } from 'fs';
-import logError from './log-error.helper';
+import path from 'path';
 
-const checkIfComponentExists = (dir: string) => {
+import { logError } from './logError';
+
+export const checkIfComponentExists = (dir: string) => {
   const fullPathToComponentDir = path.resolve(dir);
 
   if (existsSync(fullPathToComponentDir)) {
@@ -12,5 +13,3 @@ const checkIfComponentExists = (dir: string) => {
     process.exit(0);
   }
 };
-
-export default checkIfComponentExists;

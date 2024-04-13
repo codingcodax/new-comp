@@ -19,7 +19,15 @@ const uiColor = (ui: string) => {
 const fullLang = (lang: string) =>
   lang === 'js' ? 'JavaScript' : 'TypeScript';
 
-const logIntro = ({ name, lang, type, ui, dir }: { [key: string]: string }) => {
+export const logIntro = ({
+  name,
+  lang,
+  type,
+  ui,
+  dir,
+}: {
+  [key: string]: string;
+}) => {
   const nameString = chalk.bold.hex(colors.react)(name);
   const langString = chalk.bold.hex(langColor(lang))(fullLang(lang));
   const typeString = chalk.bold.hex('#6e56cf')(type);
@@ -34,5 +42,3 @@ const logIntro = ({ name, lang, type, ui, dir }: { [key: string]: string }) => {
   console.info(`UI Library: ${uiString}`);
   console.info(`Directory: ${dirString}`);
 };
-
-export default logIntro;
