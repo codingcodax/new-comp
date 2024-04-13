@@ -19,12 +19,14 @@
       "~/*": [
         "./src/*"
       ]
-    }
+    },
+    "jsx": "react-jsx"
   },
   "include": [
     "src",
     "**/*.ts",
     "**/*.js",
-    "**/*.mjs"
+    "**/*.mjs",
+    "templates"
   ]
 }
