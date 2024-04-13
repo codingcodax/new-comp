@@ -34,6 +34,7 @@
     "dev": "ts-node src/index.ts",
     "lint": "eslint src/**",
     "lint:fix": "eslint src/** --fix",
+    "typecheck": "tsc --noEmit",
     "format": "prettier src/** --check",
     "format:fix": "prettier src/** --write"
   },
