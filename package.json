@@ -31,7 +31,8 @@
   "main": "src/index.ts",
   "module": "src/index.ts",
   "scripts": {
-    "lint": "eslint src/**"
+    "lint": "eslint src/**",
+    "lint:fix": "eslint src/** --fix"
   },
   "devDependencies": {
     "@types/node": "^20.12.7",
