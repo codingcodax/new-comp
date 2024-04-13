@@ -40,5 +40,8 @@
     "@typescript-eslint/parser": "^7.6.0",
     "eslint": "^8.56.0",
     "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "prettier": "^3.2.5"
   }
 }
