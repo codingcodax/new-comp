@@ -33,7 +33,8 @@
   "scripts": {
     "lint": "eslint src/**",
     "lint:fix": "eslint src/** --fix",
-    "format": "prettier src/** --check"
+    "format": "prettier src/** --check",
+    "format:fix": "prettier src/** --write"
   },
   "devDependencies": {
     "@types/node": "^20.12.7",
