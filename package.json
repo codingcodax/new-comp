@@ -1,7 +1,7 @@
 {
   "name": "new-comp",
   "description": "CLI for creating new react components",
-  "version": "1.0.0",
+  "version": "0.1.6",
   "keywords": [
     "react",
     "reactjs",
