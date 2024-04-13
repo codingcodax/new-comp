@@ -13,7 +13,13 @@
     "skipLibCheck": true,
     "moduleResolution": "node16",
     "outDir": "lib",
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "~/*": [
+        "./src/*"
+      ]
+    }
   },
   "include": [
     "src",
