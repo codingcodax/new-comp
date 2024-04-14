@@ -1,6 +1,6 @@
 import { homedir } from 'os';
 
-import { requireOptional } from '~/utils/requireOptional';
+import { requireOptional } from '~/utils/requireOptional.ts';
 
 type Config = {
   lang: string;

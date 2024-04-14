@@ -3,13 +3,13 @@ import { mkdirSync, readFileSync, writeFileSync } from 'fs';
 import path from 'path';
 import { Command, Option } from 'commander';
 
-import { getConfig } from '~/helpers/getConfig';
+import { buildPrettifier } from '~/helpers/buildPrettifier.ts';
+import { checkIfComponentExists } from '~/helpers/checkIfComponentExists.ts';
+import { getConfig } from '~/helpers/getConfig.ts';
+import { logConclusion } from '~/helpers/logConclusion.ts';
+import { logIntro } from '~/helpers/logIntro.ts';
 
 import packageJson from '../package.json';
-import { buildPrettifier } from './helpers/buildPrettifier';
-import { checkIfComponentExists } from './helpers/checkIfComponentExists';
-import { logConclusion } from './helpers/logConclusion';
-import { logIntro } from './helpers/logIntro';
 
 const config = getConfig();
 const program = new Command();

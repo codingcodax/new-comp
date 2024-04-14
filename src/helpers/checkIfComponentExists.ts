@@ -1,7 +1,7 @@
 import { existsSync } from 'fs';
 import path from 'path';
 
-import { logError } from './logError';
+import { logError } from '~/helpers/logError.ts';
 
 export const checkIfComponentExists = (dir: string) => {
   const fullPathToComponentDir = path.resolve(dir);
