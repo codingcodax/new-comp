@@ -29,6 +29,7 @@
     "lib",
     "templates"
   ],
+  "type": "module",
   "main": "src/index.ts",
   "module": "src/index.ts",
   "scripts": {
